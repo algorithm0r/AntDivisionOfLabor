@@ -15,6 +15,7 @@ AssetManager.prototype.isDone = function () {
 }
 
 AssetManager.prototype.downloadAll = function (callback) {
+    if (this.downloadQueue.length === 0) { if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", callback); else setTimeout(callback, 0); return; }
     for (var i = 0; i < this.downloadQueue.length; i++) {
         var img = new Image();
         var that = this;

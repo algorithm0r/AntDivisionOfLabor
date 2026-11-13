@@ -1,6 +1,5 @@
 AM = new AssetManager();
 
-AM.queueDownload("./img/knight/IDLE.png");
 
 AM.downloadAll(function () {
   var canvas = document.getElementById("gameWorld");
